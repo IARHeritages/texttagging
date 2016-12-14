@@ -1,4 +1,4 @@
-# videotagging
+# texttagging
 Crowdsourcing application to tag text for IARH 
 
 First you will need to install all the dependencies with the following commands:
