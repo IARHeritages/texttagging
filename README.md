@@ -53,12 +53,13 @@ pbs --credentials micropasts update_project --watch
 
 ## Adding tasks to the project from a JSON file
 
-First of all, you will have to run the command **indpendenteSpider.py** as it will scrape a website and get all the articles regarding a query.
+First of all, you will have to run the command **getData.py** as it will scrape a website and get all the articles regarding a query.
 
-The previous command can be run like this:
+Before doing anything, you need to create a settings.py file. Copy the template, settings.py.tmpl, and create the previous file updating
+its content. Then, you can run the script like this:
 
 ```
-scrapy runspider independentSpider.py -o yourquery.json
+scrapy runspider getData.py -o yourquery.json
 
 ```
 
