@@ -1,5 +1,6 @@
 import scrapy
 import settings
+from readability import Document
 
 class QuotesSpider(scrapy.Spider):
     name = settings.NAME
@@ -22,6 +23,8 @@ class QuotesSpider(scrapy.Spider):
         time = ''
         author = ''
 
+        doc = Document(response.body)
+
         for t in response.css('header>h1'):
             title = t.css('h1::text').extract_first()
         for p in response.css('div.text-wrapper>p'):
@@ -32,6 +35,6 @@ class QuotesSpider(scrapy.Spider):
             author = a.css('a::text').extract_first()
         for t in response.css('time'):
             time = t.css('time::attr("datetime")').extract_first()
-        yield {'text': main_text, 'title': title,
+        yield {'text': doc.summary(), 'title': title,
                'author': author, 'datetime': time, 'url': response.url,
                'source': settings.SOURCE}
