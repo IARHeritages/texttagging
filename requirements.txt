@@ -1,1 +1,2 @@
 pybossa-pbs
+scrapy
