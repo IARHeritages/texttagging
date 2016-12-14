@@ -1,5 +1,5 @@
-# texttagging
-Crowdsourcing application to tag text for IARH 
+# Text-tagging
+Crowdsourcing application to tag text for IARH
 
 First you will need to install all the dependencies with the following commands:
 
@@ -63,10 +63,10 @@ scrapy runspider getData.py -o yourquery.json
 
 ```
 
-**NOTE**: We are using the Python library [scrapy](https://doc.scrapy.org/). Read the 
+**NOTE**: We are using the Python library [scrapy](https://doc.scrapy.org/). Read the
 [docs](https://doc.scrapy.org/) for more information.
 
-The **-o yourquery.json** flag allows you to save your query into different files. 
+The **-o yourquery.json** flag allows you to save your query into different files.
 
 You can see all the available options by using the flag **--help**.
 
