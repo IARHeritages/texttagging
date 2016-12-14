@@ -123,7 +123,7 @@
     <div class="col-md-8"><!-- Start of Photo DIV (column) -->
        <div id="text" class="embed-responsive embed-responsive-4by3" style="margin-bottom:10px;"></div>
 
-        <a id="newtab" target="_blank" href="#" class="btn btn-warning pull-right" style="margin-bottom:10px;">View the original</a>
+        <a id="newtab" target="_blank" href="#" class="btn btn-warning pull-right" style="margin-bottom:10px;margin-left:5px;">View the original</a>
 
        <button class="btn btn-success btn-lg btn-submit pull-left" style="display:none;">Submit</button>
        <a href="../tutorial" class="btn btn-primary pull-right" style="margin-bottom:10px;margin-left: 5px; ">Tutorial</a>
@@ -274,6 +274,7 @@ pybossa.presentTask(function(task, deferred) {
 
         var p = $("<p/>");
         var title = $("<h3/>");
+        var source = $("<p/>");
         title.text(task.info.title);
         title.css("font-weight", "bold");
         title.css("font-size", "18px");
@@ -286,12 +287,17 @@ pybossa.presentTask(function(task, deferred) {
         date.text("Published: " + task.info.datetime);
         date.css("font-size", "12px");
 
+
+        source.text("Source: " + task.info.source);
+        source.css("font-size", "12px");
+
         p.html(task.info.text); 
         p.css("width", "100%");
         p.css("font-size", "14px");
         $("#text").html("").append(title);
         $("#text").append(author);
         $("#text").append(date);
+        $("#text").append(source);
         $("#text").append(p);
         $("#newtab").attr("href", task.info.url);
         
