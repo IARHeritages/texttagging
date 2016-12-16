@@ -35,6 +35,6 @@ class QuotesSpider(scrapy.Spider):
             author = a.css('a::text').extract_first()
         for t in response.css('time'):
             time = t.css('time::attr("datetime")').extract_first()
-        yield {'text': doc.summary(), 'title': title,
+        yield {'text': main_text, 'title': title,
                'author': author, 'datetime': time, 'url': response.url,
                'source': settings.SOURCE}
